@@ -3,8 +3,12 @@ from django.db import models, IntegrityError
 
 class Candidate(models.Model):
     name = models.CharField(max_length=250)
-    details = models.TextField()
+    no_challenges_solved = models.IntegerField()
     votes = models.IntegerField(default=0)
+    python_rating = models.IntegerField(default=1)
+    dsa_rating = models.IntegerField(default=1)
+    cplus_rating = models.IntegerField(default=1)
+    java_rating = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
@@ -18,7 +22,8 @@ class Vote(models.Model):
     )
     candidate = models.ForeignKey(
         to=Candidate,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='vote'
     )
 
     def save(self, commit=True, *args, **kwargs):

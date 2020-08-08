@@ -2,6 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAdminUser
 from main.serializers import VoteSerializer, CandidateSerializer
 from main.models import Candidate
 from django.db import IntegrityError
@@ -17,8 +18,9 @@ def get_client_ip(request):
 
 
 class CandidateViewSet(ModelViewSet):
-    queryset = Candidate.objects.all().order_by('-id')
+    queryset = Candidate.objects.all().order_by('-votes')
     serializer_class = CandidateSerializer
+    permission_classes = [IsAdminUser, ]
 
 
 class CastVoteView(APIView):
