@@ -25,5 +25,22 @@ Run the following comands from `frontend/vote-app`
 
 Look in `frontend/vote-app` for more details on same
 
+# Screenshots:
+
+## Index
+![index](screenshots/1.png)
+
+## Detail View
+![details](screenshots/2.png)
+
+## Registering candidates
+![register](screenshots/3.png)
+
+## Voting
+![vote](screenshots/4.png)
+
+## Vote twice error (based on IP)
+![error](screenshots/5.png)
+
 ## Contribute
 Feel free to report any issues or make the application better
