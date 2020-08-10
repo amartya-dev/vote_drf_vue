@@ -6,6 +6,8 @@
 - CRUD REST for candidate on the endpoint: localhost:8000/api/candidate (basic auth required)
 - Vote endpoint: localhost:8000/api/vote (The post request should contain the candidate_name)
 
+Details on implementation: https://dev.to/amartyadev/a-voting-app-crud-using-django-rest-framework-and-vue-js-33d0
+
 # Technical details
 
 - Backend with REST APIs using Django Rest Framework
